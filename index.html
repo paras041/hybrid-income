@@ -3,66 +3,128 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hybrid Income Protocol – Limited Launch</title>
+  <title>RocketVideos AI - Special Offer</title>
   <style>
-    body { font-family: Arial, sans-serif; margin:0; background:#f8f9fc; color:#222; }
-    .hero { background:#1b263b; color:#fff; text-align:center; padding:60px 20px; }
-    .hero h1 { font-size:32px; margin-bottom:15px; }
-    .hero p { font-size:18px; margin-bottom:25px; }
-    .btn { display:inline-block; padding:14px 28px; background:#e63946; color:#fff; text-decoration:none; border-radius:6px; font-size:18px; cursor:pointer; border:none; }
-    .section { max-width:900px; margin:auto; padding:40px 20px; }
-    .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:20px; }
-    .card { background:#fff; padding:20px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); }
-    footer { text-align:center; padding:20px; background:#333; color:#bbb; font-size:14px; }
-    input[type="text"], input[type="email"] { width:100%; padding:12px; margin:8px 0; border-radius:6px; border:1px solid #ccc; box-sizing:border-box; }
-    label { display:block; margin-top:10px; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    .attention {
+      background: #e74c3c;
+      color: #fff;
+      text-align: center;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 600px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    p {
+      text-align: center;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    input {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    button {
+      padding: 14px;
+      background: #27ae60;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #219150;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #777;
+    }
+    .success-message {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 16px;
+      color: green;
+      font-weight: bold;
+      display: none;
+    }
   </style>
 </head>
 <body>
-
-  <!-- Hero Section -->
-  <div class="hero">
-    <h1>🚀 Hybrid Income Protocol</h1>
-    <p>Proven funnel that grossed $286K+ in past runs – now available at just $47 entry!</p>
-    <a href="https://www.jvzoo.com/affiliate/affiliateinfonew/index/422719" class="btn" target="_blank">👉 Get Instant Access</a>
+  <!-- 🔴 Attention Banner -->
+  <div class="attention">
+    🚨 Attention: This Is A Time-Sensitive Highly-DISCOUNTED Bundle Deal That Expires SOON 🚨
   </div>
 
-  <!-- Form Section -->
-  <div class="section">
-    <h2 style="text-align:center;">Get Your Bonus & Access</h2>
-    <form action="https://formspree.io/f/xovnryrk" method="POST">
+  <div class="container">
+    <h1>🚀 Get RocketVideos AI with All OTOs, Features & Bonuses <br>at 60% Discounted One-Time Price</h1>
+    <p>Transform your video creation with AI-powered tools. Enter your details to access the special offer!</p>
+    
+    <form id="offerForm">
       <input type="text" name="name" placeholder="Enter your name" required>
       <input type="email" name="email" placeholder="Enter your email" required>
-      <!-- Redirect AFTER successful submit to affiliate -->
-      <input type="hidden" name="_next" value="https://www.jvzoo.com/affiliate/affiliateinfonew/index/422719">
-      <label style="font-size:13px">
-        <input type="checkbox" name="consent" required> I agree to receive emails and promotional messages.
-      </label>
-      <button type="submit" class="btn">📥 Get Bonus & Continue</button>
+      <button type="submit">Get Instant Access</button>
     </form>
-  </div>
 
-  <!-- Why This Works -->
-  <div class="section">
-    <h2 style="text-align:center;">Why Choose Hybrid Income Protocol?</h2>
-    <div class="grid">
-      <div class="card"><strong>✅ Proven Results</strong><br>Last launch grossed $286K with 13% conversions and $14 EPCs.</div>
-      <div class="card"><strong>💰 Affordable Entry</strong><br>Only $47 to start, with high-value upsells that increase commissions.</div>
-      <div class="card"><strong>🎓 Beginner Friendly</strong><br>Done-for-You & Webinar packages make it easy to get started.</div>
+    <!-- ✅ Success message -->
+    <div class="success-message" id="successMsg">
+      ✅ Please wait... Redirecting to your special offer
+    </div>
+    
+    <div class="footer">
+      <p>We respect your privacy. Your information is safe with us.</p>
     </div>
   </div>
 
-  <!-- CTA Section -->
-  <div class="section" style="text-align:center;">
-    <h2>Ready to Start?</h2>
-    <p>Launch is open only from Sept 22 – Sept 28, 2025. Don’t miss out!</p>
-    <a href="https://www.jvzoo.com/affiliate/affiliateinfonew/index/422719" class="btn" target="_blank">🔥 Yes! Give Me Access</a>
-  </div>
+  <script>
+    document.getElementById("offerForm").addEventListener("submit", async function(e) {
+      e.preventDefault(); // Stop default submit
+      
+      const form = e.target;
+      const data = new FormData(form);
+      
+      // Send data to Formspree
+      await fetch("https://formspree.io/f/mjkezbrg", {
+        method: "POST",
+        body: data,
+        headers: { "Accept": "application/json" }
+      });
 
-  <!-- Footer -->
-  <footer>
-    <p>Disclaimer: This page contains affiliate links. If you purchase through my link, I may earn a commission at no extra cost to you.</p>
-  </footer>
+      // Show success message
+      document.getElementById("successMsg").style.display = "block";
 
+      // Redirect after 2 seconds
+      setTimeout(() => {
+        window.location.href = "https://jvz8.com/c/1612745/417363/";
+      }, 2000);
+    });
+  </script>
 </body>
 </html>
